@@ -9,7 +9,12 @@
     <p><b>v-onでのアクションの登録</b></p>
     <button @click="countUp">countUp</button>
     <p>ここがカウントアップされる -> <span v-html="count"></span></p>
-    <p><b>v-modelでの双方向データバインディング</b></p>
+    <p><b>v-modelでの双方向データバインディング - form</b></p>
+    <input type="text" v-model="text">
+    <p v-html="text"></p>
+    <p><b>v-modelでの双方向データバインディング - textarea</b></p>
+    <textarea type="text" v-model="desc"></textarea>
+    <p v-html="desc" style="white-space: pre-line;"></p>
 </div>
 <script src="https://unpkg.com/vue"></script>
 </body>
@@ -19,11 +24,13 @@
         el: '#app',
         data: {
             count:0,
+            text:"",
+            desc:""
         },
         methods: {
             countUp: function () {
                 this.count++
-            }
+            },
         }
     })
 </script>
