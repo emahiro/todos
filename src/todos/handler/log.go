@@ -10,7 +10,7 @@ func Log(h http.Handler) http.Handler {
 		rAddr := r.RemoteAddr
 		method := r.Method
 		path := r.URL.Path
-		fmt.Printf("Remote: %s [%s] %s", rAddr, method, path)
+		fmt.Printf("Remote: %s [%s] %s\n", rAddr, method, path)
 		h.ServeHTTP(w, r)
 	})
 }
