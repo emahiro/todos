@@ -1,7 +1,11 @@
 package handler
 
-import "net/http"
+import (
+	"net/http"
+
+	"todos/render"
+)
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("hello"))
+	render.RenderHTML("index.tmpl", w, nil)
 }
