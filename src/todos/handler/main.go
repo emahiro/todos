@@ -7,5 +7,5 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	render.RenderHTML("index.tmpl", w, nil)
+	render.HTMLRender("index.tmpl", w, nil)
 }
