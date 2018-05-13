@@ -13,7 +13,7 @@ func main() {
 	router := http.NewServeMux()
 	router.HandleFunc("/", handler.Index)
 	fmt.Printf("[START] server. port: %s\n", addr)
-	if err := http.ListenAndServe(addr, router); err != nil {
+	if err := http.ListenAndServe(addr, handler.Log(router)); err != nil {
 		panic(fmt.Errorf("[FAILED] start sever. err: %v", err))
 	}
 }
