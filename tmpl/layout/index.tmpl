@@ -1,9 +1,28 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8"/>
+</head>
 <body>
 <div id="app">
     <p>This is sample Vue app</p>
+    <button @click="countUp">countUp</button>
+    <p>ここがカウントアップされる -> <span v-html="count"></span></p>
 </div>
 <script src="https://unpkg.com/vue"></script>
 </body>
+<script>
+    new Vue({
+        // describe options
+        el: '#app',
+        data: {
+            count:0,
+        },
+        methods: {
+            countUp: function () {
+                this.count++
+            }
+        }
+    })
+</script>
 </html>

@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"todos/render"
+	"vueSampleApp/render"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
