@@ -6,15 +6,21 @@
 <body>
 <div id="app">
     <p>This is sample Vue app</p>
+
     <p><b>v-onでのアクションの登録</b></p>
     <button @click="countUp">countUp</button>
     <p>ここがカウントアップされる -> <span v-html="count"></span></p>
+
     <p><b>v-modelでの双方向データバインディング - form</b></p>
     <input type="text" v-model="text">
     <p v-html="text"></p>
+
     <p><b>v-modelでの双方向データバインディング - textarea</b></p>
     <textarea type="text" v-model="desc"></textarea>
     <p v-html="desc" style="white-space: pre-line;"></p>
+
+    <p><b>componentを作成</b></p>
+    <item content="hello"></item>
 </div>
 <script src="https://unpkg.com/vue"></script>
 </body>
@@ -32,6 +38,12 @@
                 this.count++
             },
         }
-    })
+    },
+
+    // componentを作成
+    Vue.component('item', {
+        template: '<div><span v-html="content"></span> world</div>',
+        props: ['content']
+    }))
 </script>
 </html>
